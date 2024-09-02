@@ -18,7 +18,7 @@ return ()=>{
 }
   },[])
   return (
-    <div className={` max-w-screen-2xl container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 ${
+    <div className={` max-w-screen-2xl container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 z-10 ${
       sticky?"sticky-navbar shadow-md bg-base-200 duration-300 transition-all":""
     }`}>
       <div className="navbar bg-base-100">
@@ -42,10 +42,10 @@ return ()=>{
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
           <li>
-        <a>Home</a>
+        <a href='/'>Home</a>
       </li>
-      <li>
-        <a>Course</a>
+      <li> 
+        <a href='/course'>Course</a>
       </li>
       <li>
         <a>Contact</a>
