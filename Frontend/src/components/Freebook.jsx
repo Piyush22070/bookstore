@@ -43,7 +43,7 @@ function Freebook() {
       };
     return (<>
         <div className='max-w-screen-2xl container mx-auto px-4'>
-            <h2 className='text-2xl font-bold mb-4'>Free Courses</h2>
+            <h2 className='text-2xl font-bold mb-4'>Boobs wali Raande</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequatur commodi voluptate nesciunt omnis architecto explicabo et ea eum quisquam?</p>
             
             

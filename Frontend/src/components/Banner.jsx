@@ -6,7 +6,7 @@ function Banner() {
         <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row my-10'>
             <div className=' w-full md:w-1/2 mt-12 flex flex-col space-y-10 margin-left:10'>
                 <h1 className='text-4xl font-bold'>
-                    Hello, welcome here to learn something <span className="text-pink-600">new</span>
+                    Hello, welcome here to have education <span className="text-pink-600">new</span>
                 </h1>
                 <p className='text-xl'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda laborum quibusdam esse voluptates dolorum. Ipsam dolor iste quas sed quae, dolorem dolorum. Perferendis perspiciatis veritatis harum aliquam tempora molestias maxime?
