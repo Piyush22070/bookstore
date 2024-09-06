@@ -1,12 +1,30 @@
 import React from 'react';
-import list from '../../public/list.json'; // Ensure this path is correct
+ // Ensure this path is correct
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Cards from './Cards';
+import axios from 'axios';
+import {useState} from 'react';
+import {useEffect} from 'react';
 function Freebook() {
+  const [book, setBook] = useState([]); // Fix: Correct state declaration
+
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        const res = await axios.get('http://localhost:3000/book'); // Make sure the API endpoint is correct
+        console.log(res.data);
+        const data=res.data.filter((data) => data.category === 'free')
+        setBook(data); // Fix: Use correct setter function
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBook();
+  }, []);
     // Filter data to get free courses
-    const filterdata = list.filter((data) => data.category === 'free');
+   
     var settings = {
         dots: true,
         infinite: false,
@@ -43,13 +61,13 @@ function Freebook() {
       };
     return (<>
         <div className='max-w-screen-2xl container mx-auto px-4'>
-            <h2 className='text-2xl font-bold mb-4'>Boobs wali Raande</h2>
+            <h2 className='text-2xl font-bold mb-4'>VAISHU JI KITABE LELO</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequatur commodi voluptate nesciunt omnis architecto explicabo et ea eum quisquam?</p>
             
             
         </div>
         <div className="slider"><Slider {...settings}>
-        {filterdata.map((item) => {
+        {book.map((item) => {
     console.log(item); // Check the output here
     return <Cards item={item} key={item.id} />;
 })}

@@ -2,7 +2,8 @@ import React from 'react';
 import Login from '../components/Login';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast';
 function Signup() {
   const {
     register,
@@ -10,10 +11,26 @@ function Signup() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    // Handle signup logic here
-    // Assuming this modal should close after form submission
+  const onSubmit = async (data) => {
+    const userInfo={
+      name:data.name,
+      email:data.email,
+      password:data.password
+    }
+
+    await axios.post("http://localhost:3000/user/signup",userInfo)
+    .then((res)=>{
+      console.log(res.data)
+      if(res.data){
+        toast.success('signup suceesfull');
+
+      }
+      localStorage.setItem("Users",JSON.stringify(res.data.user));
+
+    }).catch((error)=>{
+      console.log(error);
+      toast.error('User already exist');
+    })
   };
 
   return (
